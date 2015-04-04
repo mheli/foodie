@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="test.css" rel="stylesheet">
+    
+    <!-- Animating Image --> 
+      <style> 
+        .image {
+          width: 400px;
+          height: 300px;
+          /*background-image:url('./img/asian/1.jpg');*/
+          position: relative;
+          -webkit-animation: myfirst 1s; /* Chrome, Safari, Opera */
+          -webkit-animation-direction: reverse; /* Chrome, Safari, Opera */
+          animation: myfirst 1s; 
+        }
+
+        @-webkit-keyframes myfirst {
+            0%   {background-image:url("https://41.media.tumblr.com/f0420441ed24ce7f907b7d944fcdef1a/tumblr_nlf3v7hl2W1s9x5uco1_1280.jpg"); left: 0px; top: 0px; }
+            100% {background-image:url('https://41.media.tumblr.com/f0420441ed24ce7f907b7d944fcdef1a/tumblr_nlf3v7hl2W1s9x5uco1_1280.jpg'); left: 300px; top: 0px;}
+        }
+
+        @keyframes myfirst {
+            0%   {background-image:url("https://41.media.tumblr.com/f0420441ed24ce7f907b7d944fcdef1a/tumblr_nlf3v7hl2W1s9x5uco1_1280.jpg"); left: 0px; top: 0px; }
+            100% {background-image:url('https://41.media.tumblr.com/f0420441ed24ce7f907b7d944fcdef1a/tumblr_nlf3v7hl2W1s9x5uco1_1280.jpg'); left: 300px; top: 0px;}
+        }
+      </style>
+        
+  </head>
+  <body>
+    <div class="image">
+      <h2>Vietnamese Vegetable Pho</h2>
+      <!--<img id="pho" src="https://41.media.tumblr.com/f0420441ed24ce7f907b7d944fcdef1a/tumblr_nlf3v7hl2W1s9x5uco1_1280.jpg">-->
+    </div>
+  </body>
+</html>
