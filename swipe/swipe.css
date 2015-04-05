@@ -1,6 +1,44 @@
-.central-image {
+body {
     font-family: 'Arvo', serif;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 10%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20%;
+    font-size: 40pt;
+}
+
+.center {
+    top: 60%;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    height:500px;
+    width:400px;
+}
+
+.float-left {
+    float:left;
+    width:300px;
+}
+
+#food {
+    height: 500px;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    top: 60%;
+}
+
+#accept {
+    height: 100px;
+    width: 100px;
+}
+
+#reject {
+    height: 100px;
+    width: 100px;
 }
