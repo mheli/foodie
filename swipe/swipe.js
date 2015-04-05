@@ -66,6 +66,7 @@ function findGeolocation() {
                 alert("GEOLOCATION WORKS");
             },
             function () {
+                alert("GEOLOCATION ALMOST WORKS");
                 alert("Your browser doesn't support geolocation. We've placed you in Siberia.");
                 latitude = 60;
                 longitude = 105;
@@ -125,7 +126,7 @@ function getRandomImgUrl() {
 
                        var imgUrl = (place.photos[index]).getUrl({'maxWidth' : 1000});
 
-                        document.getElementById("yes-image").innerHTML = "<img>"+imgUrl+"</img>";
+                        document.getElementById("yes-image").innerHTML = "<img src='"+imgUrl+"'>";
                         document.getElementById("image-food").innerHTML = "<img>"+imgUrl+"</img>";
 
                         var marker = new google.maps.Marker({
