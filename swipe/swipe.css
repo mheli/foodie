@@ -35,10 +35,10 @@ h1 {
     position: relative;
 }
 
-.wrapper {
+.swipe-menu {
     margin: 0 auto;
-    width:700px;
-    margin-top:5%;
+    width: 700px;
+    margin-top: 5%;
     /*height:600px;*/
 }
 
