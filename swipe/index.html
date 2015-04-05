@@ -22,6 +22,9 @@
         <!-- Font -->
         <link href='http://fonts.googleapis.com/css?family=Lato&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+        
+        <!-- Required jQuery for click calls -->
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     </head>
     
     <!-- Body of HTML File -->
@@ -45,33 +48,32 @@
         
         <div class="name">
             <h1>Name of Food</h1>
-        </div
+        </div>
         
         <div class="outer">
             <div class="middle">
                 <div class="inner">
                     <div class="wrapper">
-                        <img id="n" style="float: center; margin: 0px 20px 15px 15px;" src="https://pressimus.com/css/images/remove-big.png" width="100" />
-                        <img id="food" style="float: center; margin: 0px 20px 15px 15px;" src="https://41.media.tumblr.com/f0420441ed24ce7f907b7d944fcdef1a/tumblr_nlf3v7hl2W1s9x5uco1_1280.jpg" width="400" />
-                        <img id="y" style="float: center; margin: 0px 0px 15px 15px;" src="http://www.clipartbest.com/cliparts/yTo/pp6/yTopp6GTE.gif" width="100" />
+                        <img id="one" style="float: center; margin: 0px 20px 15px 15px;" src="https://pressimus.com/css/images/remove-big.png" width="100" />
+                        <img id="two" style="float: center; margin: 0px 20px 15px 15px;" src="https://41.media.tumblr.com/f0420441ed24ce7f907b7d944fcdef1a/tumblr_nlf3v7hl2W1s9x5uco1_1280.jpg" width="400" />
+                        <img id="three" style="float: center; margin: 0px 0px 15px 15px;" src="http://www.clipartbest.com/cliparts/yTo/pp6/yTopp6GTE.gif" width="100" />
                     </div>
                 </div>
             </div>
         </div>
         
         <script>
-            $("#y").click(function() {
-                alert("Yes");
+            $("#three").click(function() {
+                $("#one").fadeOut("slow");
             });
         </script>
         
-    </body>
-    
-    <!-- Footer Information -->
-    <body>
+        <!-- Footer Information -->
+        
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+        
     </body>
 </html>
