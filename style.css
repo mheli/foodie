@@ -33,6 +33,7 @@ h3 {
     color: black;
 }
 
+/* Main Button Properties */
 .primary-buttons {
     top: 60%;
     margin-top: 20px;
@@ -46,6 +47,12 @@ h3 {
     text-decoration: none;
     color: black;
 }
+
+/*.btn-group-lg {*/
+/*    width: 30%;*/
+/*    margin-left: auto;*/
+/*    margin-right: auto;*/
+/*}*/
 
 /* Swipe CSS */
 
