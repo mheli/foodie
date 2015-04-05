@@ -5,11 +5,11 @@
 ////////////////////////////////////////////////////////////////
 
 //
-// Main Variables
+// Global Variables
 //
+////////////////////////////////////////////////////////////////
 
-// Temporary variables for now I guess
-
+var userAreaCode = 91733;
 var foodTitle = "Pho (Vietnamese Beef Noodle Soup)";
 
 var restaurantName = "Pho (Vietnamese Beef Noodle Soup)";
@@ -29,30 +29,94 @@ var restaurantInfo = {
     restaurantPrice: "$6 - $9"
 }
 
-var userAreaCode = 91733;
+//
+// Helper Functions
+//
+////////////////////////////////////////////////////////////////
+
+// function areaCodeToLatLng (request, response) {
+//   geocoder.geocode({ 'address': request.term, 'latLng': centLatLng, 'region': 'US' }, function (results, status) {
+//     response($.map(results, function (item) {
+//       return {
+//       item.address_components.postal_code;//This is what you want to look at
+//       }
+// }
+
+function getRandomImgUrl(){
+  var map;
+  var infowindow;
+
+  function initialize() {
+    var pyrmont = new google.maps.LatLng(-33.8665433, 151.1956316);
+  
+    map = new google.maps.Map(document.getElementById('map-canvas'), {
+      center: pyrmont,
+      zoom: 15
+    });
+  
+    var request = {
+      location: pyrmont,
+      radius: 500,
+      types: ['store']
+    };
+    infowindow = new google.maps.InfoWindow();
+    var service = new google.maps.places.PlacesService(map);
+    service.nearbySearch(request, callback);
+  }
+  
+  function callback(results, status) {
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+      for (var i = 0; i < results.length; i++) {
+        createMarker(results[i]);
+      }
+    }
+  }
+  
+  function createMarker(place) {
+    var placeLoc = place.geometry.location;
+    var marker = new google.maps.Marker({
+      map: map,
+      position: place.geometry.location
+    });
+  
+    google.maps.event.addListener(marker, 'click', function() {
+      infowindow.setContent(place.name);
+      infowindow.open(map, this);
+    });
+  }
+  
+  google.maps.event.addDomListener(window, 'load', initialize);
+}
 
 //
 // IIFE that prompts the user to input a ZIP code to search for nearby areas
 // (and later, possibly use Google's Geolocation API)
 //
+////////////////////////////////////////////////////////////////
+
 (function() {
     // Hide the yes information
     $('#food-data').hide();
     
-    // $('#area-code-modal').modal('show');
+    $('#area-code-modal').modal('show');
     document.getElementById("food-name-heading").innerHTML = foodTitle;
     document.getElementById("user-area-code").innerHTML = "Your area code - " + userAreaCode.toString();
 }());
 
+//
+// User Input Functions
+// 
+////////////////////////////////////////////////////////////////
 
 //
 // jQuery function that reads clicks on the "Yes" or "No" buttons and acts
 // on a button press of "No"
 //
 $("#button-no").click(function() {
-    $("#image-food").attr("src", "https://41.media.tumblr.com/42845f7b5fd4db8811764a9033b43d44/tumblr_nm4oedrx8x1rzwv55o1_500.jpg");
+    getRandomImgUrl();
+    $("#image-food").attr("src", "https://40.media.tumblr.com/5f0a1d478eb300af666f79f728d6d9f6/tumblr_nmajux73XD1rq6lflo1_1280.jpg");
 });
-    
+
 
 //
 // jQuery function that reads clicks on the "Yes" or "No" buttons and acts
@@ -62,7 +126,6 @@ $("#button-yes").click(function() {
     $("#button-no").fadeOut("slow");
     $(this).fadeOut("slow");
     $("#image-food").fadeOut("slow");
-    
     
     //$("#image-food").animate({
     //    'marginLeft' : "-=300px"
@@ -80,15 +143,14 @@ $("#button-yes").click(function() {
     document.getElementById("restaurant-web").innerHTML = restaurantInfo.restaurantWeb;
     
     // Hours of Operation Table
-    // document.getElementById("restaurant-hours-Sun").innerHTML = restaurantInfo.restaurantHours;
-    // document.getElementById("restaurant-hours-Mon").innerHTML = restaurantInfo.restaurantHours;
-    // document.getElementById("restaurant-hours-Tues").innerHTML = restaurantInfo.restaurantHours;
-    // document.getElementById("restaurant-hours-Wed").innerHTML = restaurantInfo.restaurantHours;
-    // document.getElementById("restaurant-hours-Thurs").innerHTML = restaurantInfo.restaurantHours;
-    // document.getElementById("restaurant-hours-Fri").innerHTML = restaurantInfo.restaurantHours;
-    // document.getElementById("restaurant-hours-Sat").innerHTML = restaurantInfo.restaurantHours;
+    document.getElementById("restaurant-hours-Sun").innerHTML = restaurantInfo.restaurantHours;
+    document.getElementById("restaurant-hours-Mon").innerHTML = restaurantInfo.restaurantHours;
+    document.getElementById("restaurant-hours-Tues").innerHTML = restaurantInfo.restaurantHours;
+    document.getElementById("restaurant-hours-Wed").innerHTML = restaurantInfo.restaurantHours;
+    document.getElementById("restaurant-hours-Thurs").innerHTML = restaurantInfo.restaurantHours;
+    document.getElementById("restaurant-hours-Fri").innerHTML = restaurantInfo.restaurantHours;
+    document.getElementById("restaurant-hours-Sat").innerHTML = restaurantInfo.restaurantHours;
     
     $("#food-data").fadeIn("slow");
     // $(".information").slideUp("slow");
 });
-
