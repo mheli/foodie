@@ -51,13 +51,13 @@ h1 {
 }
 
 /*might not need this but leave it here for now*/
-.hi {
-    text-align: center;
-}
+/*.hi {*/
+/*    text-align: center;*/
+/*}*/
 
 #restaurant-info {
-    margin: 10% auto;
-    width: 85%;
+    margin: 0px auto;
+    width: 100%;
 }
 
 #restaurant-info p {

@@ -67,11 +67,16 @@ $("#button-yes").click(function() {
     //});
     
     // Change restaurant data if accept
-    document.getElementById("restaurant-name").innerHTML = "Restaurant Name - " + restaurantInfo.restaurantName;
-    document.getElementById("restaurant-address").innerHTML = "Address - " + restaurantInfo.restaurantAddress;
-    document.getElementById("restaurant-phone").innerHTML = "Phone Number - " + restaurantInfo.restaurantPhone;
-    document.getElementById("restaurant-web").innerHTML = "Website - " + restaurantInfo.restaurantWeb;
-
+    // document.getElementById("restaurant-name").innerHTML = "Restaurant Name - " + restaurantInfo.restaurantName;
+    // document.getElementById("restaurant-address").innerHTML = "Address - " + restaurantInfo.restaurantAddress;
+    // document.getElementById("restaurant-phone").innerHTML = "Phone Number - " + restaurantInfo.restaurantPhone;
+    // document.getElementById("restaurant-web").innerHTML = "Website - " + restaurantInfo.restaurantWeb;
+    
+    document.getElementById("restaurant-name").innerHTML = restaurantInfo.restaurantName;
+    document.getElementById("restaurant-address").innerHTML = restaurantInfo.restaurantAddress;
+    document.getElementById("restaurant-phone").innerHTML = restaurantInfo.restaurantPhone;
+    document.getElementById("restaurant-web").innerHTML = restaurantInfo.restaurantWeb;
+    
     $(".information").fadeIn("slow");
     // $(".information").slideUp("slow");
 });
