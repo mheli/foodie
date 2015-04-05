@@ -13,7 +13,7 @@ body {
 
 h1 {
     text-align: center;
-    margin: 4% auto;
+    margin: 5% auto;
     font-size: 84pt;
     color: #FFF;
 }
@@ -28,6 +28,7 @@ h3 {
 
 /* Navbar Properties */
 #navbar-main a {
+    text-decoration: none;
     color: black;
 }
 

@@ -39,30 +39,6 @@ h1 {
     /*height:600px;*/
 }
 
-.item1 {
-    height: 200px;
-    width: 200px;
-    display:inline-block;
-    margin-left:auto;
-    margin-right:auto;
-}
-
-.item2 {
-    height: 200px;
-    width: 200px;
-    display:inline-block;
-    margin-left:auto;
-    margin-right:auto;
-}
-
-.item3 {
-    height:200px;
-    width:200px;
-    display:inline-block;
-    margin-left:auto;
-    margin-right:auto;
-}
-
 .information {
     display:none;
 }
