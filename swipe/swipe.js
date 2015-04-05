@@ -64,6 +64,11 @@ function findGeolocation() {
                 latitude = position.coords.latitude;
                 longitude = position.coords.longitude;
                 alert("GEOLOCATION WORKS");
+            },
+            function () {
+                alert("Your browser doesn't support geolocation. We've placed you in Siberia.");
+                latitude = 60;
+                longitude = 105;
             }
         );
     } else { // Browser doesn't support Geolocation
@@ -95,7 +100,7 @@ function getRandomImgUrl() {
             radius: 500,
             types: ['restaurant']
           };
-          alert("begin11");
+          alert("begin12");
           infowindow = new google.maps.InfoWindow();
           var service = new google.maps.places.PlacesService(map);
           service.nearbySearch(request, function(results, status) {
@@ -106,7 +111,6 @@ function getRandomImgUrl() {
                 }
                 var index = Math.floor((Math.random() * place_id_2_place.length));
                 var count = 0;
-                alert(index);
 
                  for (var key in place_id_2_place) {
                    if (count >= index){
@@ -120,6 +124,9 @@ function getRandomImgUrl() {
                         var index = Math.floor((Math.random() * place.photos.length));
 
                        var imgUrl = (place.photos[index]).getUrl({'maxWidth' : 1000});
+
+                        document.getElementById("yes-image").innerHTML = "<img>"+imgUrl+"</img>";
+                        document.getElementById("image-food").innerHTML = "<img>"+imgUrl+"</img>";
 
                         var marker = new google.maps.Marker({
                         map: map,
@@ -208,7 +215,7 @@ $('#modal-button-geolocation').click(function() {
 //
 $("#button-no").click(function() {
     getRandomImgUrl();
-    $("#image-food").attr("src", "https://40.media.tumblr.com/5f0a1d478eb300af666f79f728d6d9f6/tumblr_nmajux73XD1rq6lflo1_1280.jpg");
+    //$("#image-food").attr("src", "https://40.media.tumblr.com/5f0a1d478eb300af666f79f728d6d9f6/tumblr_nmajux73XD1rq6lflo1_1280.jpg");
 });
 
 
