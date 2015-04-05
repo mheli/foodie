@@ -79,7 +79,14 @@ $("#button-yes").click(function() {
     document.getElementById("restaurant-phone").innerHTML = restaurantInfo.restaurantPhone;
     document.getElementById("restaurant-web").innerHTML = restaurantInfo.restaurantWeb;
     
-    document.getElementById("restaurant-hours").innerHTML = restaurantInfo.restaurantHours;
+    // Hours of Operation Table
+    // document.getElementById("restaurant-hours-Sun").innerHTML = restaurantInfo.restaurantHours;
+    // document.getElementById("restaurant-hours-Mon").innerHTML = restaurantInfo.restaurantHours;
+    // document.getElementById("restaurant-hours-Tues").innerHTML = restaurantInfo.restaurantHours;
+    // document.getElementById("restaurant-hours-Wed").innerHTML = restaurantInfo.restaurantHours;
+    // document.getElementById("restaurant-hours-Thurs").innerHTML = restaurantInfo.restaurantHours;
+    // document.getElementById("restaurant-hours-Fri").innerHTML = restaurantInfo.restaurantHours;
+    // document.getElementById("restaurant-hours-Sat").innerHTML = restaurantInfo.restaurantHours;
     
     $("#food-data").fadeIn("slow");
     // $(".information").slideUp("slow");
