@@ -20,24 +20,10 @@ var foodName = [
     "lol"
 ];
 
-var restaurantName = "Pho Filet";
-var restaurantAddress = "4242 San Gabriel Avenue, San Gabriel, California 96969";
-var restaurantPhone = "(696) 969-6969";
-var restaurantWeb = "N/A";
-var restaurantHours = "6 AM - 9 PM";
-var restaurantPrice = "$6 - $9";
-var restaurantHoursSun = "10:00 AM - 9:00 PM";
-var restaurantHoursMon = "10:00 AM - 9:00 PM";
-var restaurantHoursTues = "10:00 AM - 9:00 PM";
-var restaurantHoursWed = "10:00 AM - 9:00 PM";
-var restaurantHoursThurs = "10:00 AM - 8:00 PM";
-var restaurantHoursFri = "11:00 AM - 4:00 PM";
-var restaurantHoursSat = "11:00 AM - 4:00 PM";
-
 var restaurantInfo = {
     restaurantName: "Pho Filet",
-    restaurantAddress: "4242 San Gabriel Avenue, San Gabriel, California 96969",
-    restaurantPhone: "(696) 969-6969",
+    restaurantAddress: "4242 San Gabriel Avenue, San Gabriel, California 42424",
+    restaurantPhone: "(424) 242-4242",
     restaurantWeb: "N/A",
     restaurantHoursSun: "6 AM - 9 PM",
     restaurantHoursMon: "6 AM - 9 PM",
@@ -295,3 +281,4 @@ $("#button-yes").click(function() {
     $("#food-data").fadeIn("slow");
     // $(".information").slideUp("slow");
 });
+
