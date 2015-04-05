@@ -56,9 +56,13 @@ h1 {
 }
 
 .vertical-center {
-    float: none;
+    display: table !important;
+}
+
+.vertical-center.vertical-center-img {
+    display: table-cell !important;
+    text-align: center;
     vertical-align: middle;
-    display: inline-block !important;
 }
 
 /* Header and Footer Navbar Properties */
