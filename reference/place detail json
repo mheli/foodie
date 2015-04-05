@@ -1,0 +1,205 @@
+{
+   "html_attributions" : [],
+   "result" : {
+      "address_components" : [
+         {
+            "long_name" : "1",
+            "short_name" : "1",
+            "types" : [ "subpremise" ]
+         },
+         {
+            "long_name" : "308",
+            "short_name" : "308",
+            "types" : [ "street_number" ]
+         },
+         {
+            "long_name" : "Westwood Plaza",
+            "short_name" : "Westwood Plaza",
+            "types" : [ "route" ]
+         },
+         {
+            "long_name" : "Los Angeles",
+            "short_name" : "LA",
+            "types" : [ "locality", "political" ]
+         },
+         {
+            "long_name" : "California",
+            "short_name" : "CA",
+            "types" : [ "administrative_area_level_1", "political" ]
+         },
+         {
+            "long_name" : "United States",
+            "short_name" : "US",
+            "types" : [ "country", "political" ]
+         },
+         {
+            "long_name" : "90095",
+            "short_name" : "90095",
+            "types" : [ "postal_code" ]
+         }
+      ],
+      "adr_address" : "\u003cspan class=\"street-address\"\u003e308 Westwood Plaza #1\u003c/span\u003e, \u003cspan class=\"locality\"\u003eLos Angeles\u003c/span\u003e, \u003cspan class=\"region\"\u003eCA\u003c/span\u003e \u003cspan class=\"postal-code\"\u003e90095\u003c/span\u003e, \u003cspan class=\"country-name\"\u003eUnited States\u003c/span\u003e",
+      "formatted_address" : "308 Westwood Plaza #1, Los Angeles, CA 90095, United States",
+      "formatted_phone_number" : "(310) 794-4009",
+      "geometry" : {
+         "location" : {
+            "lat" : 34.070441,
+            "lng" : -118.444056
+         }
+      },
+      "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+      "id" : "4650cf673dffb338835d2381cdea55c8e971dab8",
+      "international_phone_number" : "+1 310-794-4009",
+      "name" : "Rubio's",
+      "opening_hours" : {
+         "open_now" : false,
+         "periods" : [
+            {
+               "close" : {
+                  "day" : 0,
+                  "time" : "1600"
+               },
+               "open" : {
+                  "day" : 0,
+                  "time" : "1100"
+               }
+            },
+            {
+               "close" : {
+                  "day" : 1,
+                  "time" : "2100"
+               },
+               "open" : {
+                  "day" : 1,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : {
+                  "day" : 2,
+                  "time" : "2100"
+               },
+               "open" : {
+                  "day" : 2,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : {
+                  "day" : 3,
+                  "time" : "2100"
+               },
+               "open" : {
+                  "day" : 3,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : {
+                  "day" : 4,
+                  "time" : "2100"
+               },
+               "open" : {
+                  "day" : 4,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : {
+                  "day" : 5,
+                  "time" : "2000"
+               },
+               "open" : {
+                  "day" : 5,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : {
+                  "day" : 6,
+                  "time" : "1600"
+               },
+               "open" : {
+                  "day" : 6,
+                  "time" : "1100"
+               }
+            }
+         ],
+         "weekday_text" : [
+            "Monday: 10:00 am – 9:00 pm",
+            "Tuesday: 10:00 am – 9:00 pm",
+            "Wednesday: 10:00 am – 9:00 pm",
+            "Thursday: 10:00 am – 9:00 pm",
+            "Friday: 10:00 am – 8:00 pm",
+            "Saturday: 11:00 am – 4:00 pm",
+            "Sunday: 11:00 am – 4:00 pm"
+         ]
+      },
+      "photos" : [
+         {
+            "height" : 1600,
+            "html_attributions" : [],
+            "photo_reference" : "CnRnAAAAW0HiLQtM3tSpbWvZ9vxXdPIJZYfWGTRzxq2p1_1jVjvTfjNT58ebejY-HL6KPOXAJxwGU5yBy3RDbxMRur2b9gkKVwCwo41jJ5gLQ9nFlpuzl8RWJC69xt-Bzcy-BKvdo1MEZ6Dkq5_OfoApJcqTwhIQxdFegfgt3KRgfihd4KyLUhoUcsbHbJaSviLFhJHtJqmZmwNQsHw",
+            "width" : 2400
+         },
+         {
+            "height" : 1600,
+            "html_attributions" : [],
+            "photo_reference" : "CnRnAAAAaIiPdjWAwlQZko6jxz2kQBIxQhEvYbk6DRITtGPdh5r1xKE-sy6HZoRYN6pIMFlR4pHtqn2YAGt8TdLGinwWTzul3hS9CM2sE3sJ8deD4fXvk_hcjsUrqzkAtJK3KbS967A6YVyzDnFMBQOUCp6tYxIQG5j7n5cp0yTxofJJONE0AxoUS8MA2bceXbzkh18zmdnBQuSjoYU",
+            "width" : 2400
+         },
+         {
+            "height" : 1600,
+            "html_attributions" : [],
+            "photo_reference" : "CnRnAAAA8dIWgAgr3tPn3GQZxv6D-FUvy7aUs7ghZF-bidHY5uOIEvNN5-54T_MPUOJq1AZrp6wUZswrAUoRN4T3NnwW4bMaAV_KVX4jzMoidi4EAg1DjdJ0z7R_EsXTStOl-9e_t_3_CYIznA1ZA0AA13p3lxIQR6RS4E64aKG5fQdheFY_JRoUHEAY8Ic4me6eGKLqr9WRrWWga2o",
+            "width" : 2400
+         },
+         {
+            "height" : 1600,
+            "html_attributions" : [],
+            "photo_reference" : "CnRnAAAArnB6dOa8C5Hn8S_mPp9ZtoUx_npAi-MZi3MrVhK835CZzBVkBcTqklvB32aoFbmtaDavxTz2wuh13AveDDvJ_6uUN8v-rBqjt_qwhJoDb3iMx0PQ0OHQdnSKTBokTQBJ56aw-MBPV_Hlv8-aw_uhfRIQjSMeZ6DN-VYCfI21K0d5sxoUvmnm5jBwBEmr5ibWd11vfDzJt3s",
+            "width" : 2400
+         }
+      ],
+      "place_id" : "ChIJIT0jlIi8woAR0QAfG3GWu1M",
+      "price_level" : 1,
+      "reference" : "CmRaAAAAvepYed8ZdVTbLWiKxlXmvX5ZGmPpBU8XkJs5p-RVR3Sz7YqfocaQ-yGy8sSdkrfvKbLoR8SbVCYqKJPUHhcUyAcVZ9Sawrx9Q8nb7qpEJl5XUbhgVBpSFgw92yrbsnvGEhBSWZ3z4yX8YGwmO5UtLzotGhRI_u5rm92rKp83dO4a3E14ajk_qA",
+      "reviews" : [
+         {
+            "aspects" : [
+               {
+                  "rating" : 2,
+                  "type" : "overall"
+               }
+            ],
+            "author_name" : "Stella Plato",
+            "author_url" : "https://plus.google.com/113725801769444057746",
+            "language" : "en",
+            "rating" : 4,
+            "text" : "This is a great place to grab lunch on campus. My favorite is the chipotle ranch salad with shrimp. I am also a fan of their burritos, they are huge though so be ready for a big meal. There is a great selection of salsas, hardest part is picking which ones you want to grab. \n\nThe staff is friendly and willing to make alterations if you want to modify something.  ",
+            "time" : 1417736361
+         },
+         {
+            "aspects" : [
+               {
+                  "rating" : 3,
+                  "type" : "overall"
+               }
+            ],
+            "author_name" : "A Google User",
+            "language" : "en",
+            "rating" : 5,
+            "text" : "Ate a pesky's combo or as they call it nowadays a \"fish taco especial plate\" there today. it was very good. pinto beans were hot well spiced and delicious. fish in the taco was crispy and the ratios between the fish and cabbage and white sauce and cheese and guacamole and salsa in the taco were all just right through the entirety of the taco. which anyone who has ever made their own taco will appreciate the difficulty of. my only two complaints this time are that i would have liked to have had more chips, and the mild salsa was a bit more tomatoey than usual which made it too tomatoey. other than that very pleased",
+            "time" : 1271128155
+         }
+      ],
+      "scope" : "GOOGLE",
+      "types" : [ "restaurant", "food", "establishment" ],
+      "url" : "https://plus.google.com/109602551586491319476/about?hl=en-US",
+      "user_ratings_total" : 2,
+      "utc_offset" : -420,
+      "vicinity" : "308 Westwood Plaza #1, Los Angeles",
+      "website" : "http://www.rubios.com/"
+   },
+   "status" : "OK"
+}

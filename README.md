@@ -1,5 +1,10 @@
 # FoodByte
 
+CREDITS
+- Catherine Truong
+- Michelle Li
+- Brandon Ly
+
 - "Swiping" right will bring up the info for that item (specifically, the item
   will move half-width to the right and the info will appear directly on the
   left). At the bottom of the info page there will be a like button which
