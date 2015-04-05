@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+    <!-- Head Information -->
+    <head>
+        <title>FoodByte - Select a meal</title>
+        
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap -->
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+        <link href="swipe.css" rel="stylesheet">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        
+        <!-- Font -->
+        <link href='http://fonts.googleapis.com/css?family=Lato&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+        
+        <!-- Required jQuery for click calls -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        
+    </head>
+    
+    <!-- Body of HTML File -->
+    <body>
+        
+        <!-- Header -->
+        <div id="header-navbar" class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li><a id="user-area-code">Current Area Code - 00000</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/">About</a></li>
+                        <li><a href="/">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Area Code Modal -->
+        <div class="modal fade" id="area-code-modal" tabindex="-1" role="dialog" aria-labelledby="area-code-modal-label">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="area-code-modal-label">What is your area code?</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div>Please enter your area code here.</div>
+                        <input style="margin-top:5px;margin-bottom:5px;" type="text" name="area-code-input"/>
+                        <div><br>-- OR --<br></div>
+                        <div>Find your location automatically.</div>
+                        <button style="margin-top:5px;margin-bottom:5px;" type="button" id="modal-button-geolocation" class="btn">Find Location</button>
+                    </div>
+                    <div class="modal-footer">
+                        <center>
+                            <button type="button" id="modal-button" class="btn">Done</button>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Food Item name -->
+        <div id="food-name" class="name">
+            <h1 id="food-name-heading">So how does this dish look?</h1>
+            <!--<h2 id="zipcode">Zipcode</h2>-->
+        </div>
+        
+        <!-- Image formatting -->
+        <!--<div class="swipe-menu" >-->
+        <!--    <img id="button-no" style="float: center; margin: 0px 20px 15px 15px;" src="https://pressimus.com/css/images/remove-big.png" width="100" />-->
+        <!--    <img id="image-food" style="float: center; margin: 0px 20px 15px 15px;" src="https://41.media.tumblr.com/f0420441ed24ce7f907b7d944fcdef1a/tumblr_nlf3v7hl2W1s9x5uco1_1280.jpg" width="400" />-->
+        <!--    <img id="button-yes" style="float: center; margin: 0px 0px 15px 15px;" src="http://www.clipartbest.com/cliparts/yTo/pp6/yTopp6GTE.gif" width="100" />-->
+        <!--</div>-->
+        <div class="row container" style="width:100%;">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <img id="button-no" class="img-responsive center-block vertical-center" src="https://pressimus.com/css/images/remove-big.png" width="100" />
+            </div>
+            <div id="yes-image" class="disappear col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <img id="image-food" class="img-responsive center-block" src="https://41.media.tumblr.com/f0420441ed24ce7f907b7d944fcdef1a/tumblr_nlf3v7hl2W1s9x5uco1_1280.jpg" width="400" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <img id="button-yes" class="img-responsive center-block vertical-center" src="http://www.clipartbest.com/cliparts/yTo/pp6/yTopp6GTE.gif" width="100" />
+            </div>
+        </div>
+
+        
+        <!-- Food Data -->
+        <div class="container">
+            <div id="food-data" class="row">
+                <div id="wanted-image" class="col-md-6">
+                    <img id="approved-image" class="img-responsive center-block" src="https://41.media.tumblr.com/f0420441ed24ce7f907b7d944fcdef1a/tumblr_nlf3v7hl2W1s9x5uco1_1280.jpg" width="400">
+                </div>
+                
+                <div class="col-md-6">
+                    <!--<div id="restaurant-info">-->
+                    <!--    <p id="restaurant-name">Restaurant Name - </p>-->
+                    <!--    <p id="restaurant-address">Address - </p>-->
+                    <!--    <p id="restaurant-phone">Phone Number - </p>-->
+                    <!--    <p id="restaurant-web">Website - </p>-->
+                    <!--</div>-->
+                    <table id="restaurant-info" class="table">
+                        <tbody>
+                            <tr>
+                                <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            </tr>
+                            <tr>
+                                <td>Restaurant Name</td>
+                                <td id="restaurant-name"></td>
+                            </tr>
+                            <tr>
+                                <td>Address</td>
+                                <td id="restaurant-address"></td>
+                            </tr>
+                            <tr>
+                                <td>Phone Number</td>
+                                <td id="restaurant-phone"></td>
+                            </tr>
+                            <tr>
+                                <td>Website</td>
+                                <td id="restaurant-web"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-striped">
+                        <thead>
+                            <center><th>Times</th></center>
+                        </thead>
+                        
+                        <tbody>
+                            <tr>
+                                <td id="restaurant-hours-Sun">time</td>
+                            </tr>
+                            <tr>
+                                <td id="restaurant-hours-Mon">time</td>
+                            </tr>
+                            <tr>
+                                <td id="restaurant-hours-Tues">time</td>
+                            </tr>
+                            <tr>
+                                <td id="restaurant-hours-Wed">time</td>
+                            </tr>
+                            <tr>
+                                <td id="restaurant-hours-Thurs">time</td>
+                            </tr>
+                            <tr>
+                                <td id="restaurant-hours-Fri">time</td>
+                            </tr>
+                            <tr>
+                                <td id="restaurant-hours-Sat">time</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <div id="map-canvas" style="display: none"></div>
+
+        <!-- Footer Information -->
+        
+        <!-- Include some scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;signed_in=true&amp;libraries=places"></script>
+        <script src="swipe.js"></script>
+    </body>
+</html>
