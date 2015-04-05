@@ -54,39 +54,48 @@
                         <h3 class="modal-title" id="area-code-modal-label">What is your area code?</h3>
                     </div>
                     <div class="modal-body">
-                        <div>Please enter your area code here - </div>
-                        <input type="text" name="area-code-input"/>
-                        <div>- OR -</div>
-                        <div>Find your location automatically - </div>
-                        <button type="button" id="modal-button-geolocation" class="btn">Find Location</button>
+                        <div>Please enter your area code here.</div>
+                        <input style="margin-top:5px;margin-bottom:5px;" type="text" name="area-code-input"/>
+                        <div><br>-- OR --<br></div>
+                        <div>Find your location automatically.</div>
+                        <button style="margin-top:5px;margin-bottom:5px;" type="button" id="modal-button-geolocation" class="btn">Find Location</button>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" id="modal-button" class="btn">Done </button>
+                        <center>
+                            <button type="button" id="modal-button" class="btn">Done</button>
+                        </center>
                     </div>
                 </div>
             </div>
         </div>
         
-        
         <!-- Food Item name -->
         <div id="food-name" class="name">
-            <h1 id="food-name-heading">Name of Food</h1>
+            <h1 id="food-name-heading">So how does this dish look?</h1>
             <!--<h2 id="zipcode">Zipcode</h2>-->
         </div>
         
         <!-- Image formatting -->
-        <div class="swipe-menu">
-            <img id="button-no" style="float: center; margin: 0px 20px 15px 15px;" src="https://pressimus.com/css/images/remove-big.png" width="100" />
-            <img id="image-food" style="float: center; margin: 0px 20px 15px 15px;" src="https://41.media.tumblr.com/f0420441ed24ce7f907b7d944fcdef1a/tumblr_nlf3v7hl2W1s9x5uco1_1280.jpg" width="400" />
-            <img id="button-yes" style="float: center; margin: 0px 0px 15px 15px;" src="http://www.clipartbest.com/cliparts/yTo/pp6/yTopp6GTE.gif" width="100" />
+        <!--<div class="swipe-menu" >-->
+        <!--    <img id="button-no" style="float: center; margin: 0px 20px 15px 15px;" src="https://pressimus.com/css/images/remove-big.png" width="100" />-->
+        <!--    <img id="image-food" style="float: center; margin: 0px 20px 15px 15px;" src="https://41.media.tumblr.com/f0420441ed24ce7f907b7d944fcdef1a/tumblr_nlf3v7hl2W1s9x5uco1_1280.jpg" width="400" />-->
+        <!--    <img id="button-yes" style="float: center; margin: 0px 0px 15px 15px;" src="http://www.clipartbest.com/cliparts/yTo/pp6/yTopp6GTE.gif" width="100" />-->
+        <!--</div>-->
+        <div>
+            <div class="disappear" style="height:75px; width:100%"></div>
+            <div class="disappear" style="height:900px; width:25%; float: left"></div>
+            <img id="button-no" style="float:left; margin:0px 20px 15px 15px;" src="https://pressimus.com/css/images/remove-big.png" width="100" />
+            <div id="yes-image" class="disappear" style="width:400px; height:601px; float: left; margin: 0px 20px 15px 15px;">
+                <img id="image-food" style="" src="https://41.media.tumblr.com/f0420441ed24ce7f907b7d944fcdef1a/tumblr_nlf3v7hl2W1s9x5uco1_1280.jpg" width="400" />
+            </div>
+            <img id="button-yes" style="float: left; margin: 0px 20px 15px 15px;" src="http://www.clipartbest.com/cliparts/yTo/pp6/yTopp6GTE.gif" width="100" />
         </div>
-        
-        <div class="load-data"></div>
+
         
         <!-- Food Data -->
         <div class="container">
             <div id="food-data" class="row">
-                <div class="col-md-6">
+                <div id="wanted-image" class="col-md-6">
                     <img id="approved-image" src="https://41.media.tumblr.com/f0420441ed24ce7f907b7d944fcdef1a/tumblr_nlf3v7hl2W1s9x5uco1_1280.jpg" width="400">
                 </div>
                 
@@ -99,6 +108,9 @@
                     <!--</div>-->
                     <table id="restaurant-info" class="table">
                         <tbody>
+                            <tr>
+                                <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            </tr>
                             <tr>
                                 <td>Restaurant Name</td>
                                 <td id="restaurant-name"></td>
@@ -119,38 +131,40 @@
                     </table>
                     <table class="table table-striped">
                         <thead>
-                            <th>Days</th>
-                            <th>Hours</th>
+                            <center>
+                                <th>Day</th>
+                                <th>Hours</th>
+                            </center>
                         </thead>
                         
                         <tbody>
                             <tr>
                                 <td>Sunday</td>
-                                <td id="restaurant-hours-Sun">time</td>
+                                <td id="restaurant-hours-Sun">restaurantHoursSun</td>
                             </tr>
                             <tr>
                                 <td>Monday</td>
-                                <td id="restaurant-hours-Mon">time</td>
+                                <td id="restaurant-hours-Mon">restaurantHoursMon</td>
                             </tr>
                             <tr>
                                 <td>Tuesday</td>
-                                <td id="restaurant-hours-Tues">time</td>
+                                <td id="restaurant-hours-Tues">restaurantHoursTues</td>
                             </tr>
                             <tr>
                                 <td>Wednesday</td>
-                                <td id="restaurant-hours-Wed">time</td>
+                                <td id="restaurant-hours-Wed">restaurantHoursWed</td>
                             </tr>
                             <tr>
                                 <td>Thursday</td>
-                                <td id="restaurant-hours-Thurs">time</td>
+                                <td id="restaurant-hours-Thurs">restaurantHoursThurs</td>
                             </tr>
                             <tr>
                                 <td>Friday</td>
-                                <td id="restaurant-hours-Fri">time</td>
+                                <td id="restaurant-hours-Fri">restaurantHoursFri</td>
                             </tr>
                             <tr>
                                 <td>Saturday</td>
-                                <td id="restaurant-hours-Sat">time</td>
+                                <td id="restaurant-hours-Sat">restaurantHoursSat</td>
                             </tr>
                         </tbody>
                     </table>

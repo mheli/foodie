@@ -13,10 +13,6 @@ body {
     opacity: 0.89 !important;
 }
 
-/*.border-radius {*/
-    
-/*}*/
-
 #area-code-modal {
     text-align:center;
 }
@@ -52,11 +48,6 @@ h1 {
 #food-data {
     margin-bottom: 5%;
 }
-
-/*might not need this but leave it here for now*/
-/*.hi {*/
-/*    text-align: center;*/
-/*}*/
 
 #restaurant-info {
     margin: 5% auto;

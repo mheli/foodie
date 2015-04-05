@@ -13,22 +13,39 @@ var userAreaCode = 91733;
 var latitude = 0;
 var longitude = 0;
 
-var foodTitle = "Pho (Vietnamese Beef Noodle Soup)";
+var foodName = [
+    "So what do you think of this dish?",
+    "How about you check this out!",
+    "This dish looks real hot!",
+    ""
+];
 
-var restaurantName = "Pho (Vietnamese Beef Noodle Soup)";
-var restaurantRestaurant = "Pho Filet";
+var restaurantName = "Pho Filet";
 var restaurantAddress = "4242 San Gabriel Avenue, San Gabriel, California 96969";
 var restaurantPhone = "(696) 969-6969";
 var restaurantWeb = "N/A";
 var restaurantHours = "6 AM - 9 PM";
 var restaurantPrice = "$6 - $9";
+var restaurantHoursSun = "10:00 AM - 9:00 PM";
+var restaurantHoursMon = "10:00 AM - 9:00 PM";
+var restaurantHoursTues = "10:00 AM - 9:00 PM";
+var restaurantHoursWed = "10:00 AM - 9:00 PM";
+var restaurantHoursThurs = "10:00 AM - 8:00 PM";
+var restaurantHoursFri = "11:00 AM - 4:00 PM";
+var restaurantHoursSat = "11:00 AM - 4:00 PM";
 
 var restaurantInfo = {
     restaurantName: "Pho Filet",
     restaurantAddress: "4242 San Gabriel Avenue, San Gabriel, California 96969",
     restaurantPhone: "(696) 969-6969",
     restaurantWeb: "N/A",
-    restaurantHours: "6 AM - 9 PM",
+    restaurantHoursSun: "6 AM - 9 PM",
+    restaurantHoursMon: "6 AM - 9 PM",
+    restaurantHoursTues: "6 AM - 9 PM",
+    restaurantHoursWed: "6 AM - 9 PM",
+    restaurantHoursThurs: "6 AM - 9 PM",
+    restaurantHoursFri: "6 AM - 9 PM",
+    restaurantHoursSat: "6 AM - 9 PM",
     restaurantPrice: "$6 - $9"
 }
 
@@ -89,7 +106,7 @@ function getRandomImgUrl() {
     var place_photos_2_id = [];
 
         function initialize() {
-          var pyrmont = new google.maps.LatLng(-33.8665433, 151.1956316);
+          var pyrmont = new google.maps.LatLng(latitude, longitude);
         
           map = new google.maps.Map(document.getElementById('map-canvas'), {
             center: pyrmont,
@@ -98,25 +115,31 @@ function getRandomImgUrl() {
         
           var request = {
             location: pyrmont,
-            radius: 500,
+            radius: 3800,
             types: ['restaurant']
           };
-          alert("begin12");
+          
           infowindow = new google.maps.InfoWindow();
           var service = new google.maps.places.PlacesService(map);
           service.nearbySearch(request, function(results, status) {
               if (status == google.maps.places.PlacesServiceStatus.OK) {
-                for (var i = 0; i < results.length; i++) {
+                var i;
+                for (i = 0; i < results.length; i++) {
                   place_id_2_place[results[i].place_id] = results[i];
                   createMarker(results[i]);
                 }
                 var index = Math.floor((Math.random() * place_id_2_place.length));
                 var count = 0;
-
-                 for (var key in place_id_2_place) {
-                   if (count >= index){
+                var pic_key;
+                for (var key in place_id_2_place) {
+                    if (count >= index)
+                        pic_key = key;
+                    else
+                        count += 1;
+                }
+                 
                     var request = {
-                      placeId: key
+                      placeId: pic_key
                     };
                    
                   service.getDetails(request, function(place, status) {
@@ -124,10 +147,26 @@ function getRandomImgUrl() {
     
                         var index = Math.floor((Math.random() * place.photos.length));
 
-                       var imgUrl = (place.photos[index]).getUrl({'maxWidth' : 1000});
+                        var imgUrl = (place.photos[index]).getUrl({'maxWidth' : 400});
+                        document.getElementById("yes-image").innerHTML = "<img id='image-food' src='"+imgUrl+"'>";
+                        //'<img id="button-no" style="float: center; margin: 0px 20px 15px 15px;" src="https://pressimus.com/css/images/remove-big.png" width="100" /><img id="image-food" style="float: center; margin: 0px 20px 15px 15px;" src="' + imgUrl + '" width="400" /> <img id="button-yes" style="float: center; margin: 0px 0px 15px 15px;" src="http://www.clipartbest.com/cliparts/yTo/pp6/yTopp6GTE.gif" width="100" />';
+                        document.getElementById("wanted-image").innerHTML = "<img id='approved-image'  width='400' src='"+imgUrl+"'>";
 
-                        document.getElementById("yes-image").innerHTML = "<img src='"+imgUrl+"'>";
-                        document.getElementById("image-food").innerHTML = "<img>"+imgUrl+"</img>";
+                        restaurantInfo.restaurantName = place_id_2_place[pic_key].name;
+                        restaurantInfo.restaurantAddress = place.formatted_address;
+                        restaurantInfo.restaurantPhone = place.international_phone_number;
+                        restaurantInfo.restaurantWeb = place.website;
+                        alert("about to parse");
+                        var sch = String.split(place.opening_hours.weekday_text, ",");
+                        alert(sch);
+                        restaurantInfo.restaurantHoursSun = sch[0];
+                        restaurantInfo.restaurantHoursMon = sch[1];
+                        restaurantInfo.restaurantHoursTues = sch[2];
+                        restaurantInfo.restaurantHoursWed = sch[3];
+                        restaurantInfo.restaurantHoursThurs = sch[4];
+                        restaurantInfo.restaurantHoursFri = sch[5];
+                        restaurantInfo.restaurantHoursSat = sch[6];
+
 
                         var marker = new google.maps.Marker({
                         map: map,
@@ -140,13 +179,11 @@ function getRandomImgUrl() {
                     }
                   });
                  
-                   }
-                   else
-                    count += 1;
                  }
-              }
+      
             });
         }
+
         
         function createMarker(place) {
           var placeLoc = place.geometry.location;
@@ -176,7 +213,7 @@ function getRandomImgUrl() {
     $('#food-data').hide();
     
     $('#area-code-modal').modal('show');
-    document.getElementById("food-name-heading").innerHTML = foodTitle;
+    document.getElementById("food-name-heading").innerHTML = foodName[0];
     document.getElementById("user-area-code").innerHTML = "Your area code - " + userAreaCode.toString();
 }());
 
@@ -228,6 +265,7 @@ $("#button-yes").click(function() {
     $("#button-no").fadeOut("slow");
     $(this).fadeOut("slow");
     $("#image-food").fadeOut("slow");
+    $(".disappear").fadeOut("slow");
     
     //$("#image-food").animate({
     //    'marginLeft' : "-=300px"
@@ -245,13 +283,13 @@ $("#button-yes").click(function() {
     document.getElementById("restaurant-web").innerHTML = restaurantInfo.restaurantWeb;
     
     // Hours of Operation Table
-    document.getElementById("restaurant-hours-Sun").innerHTML = restaurantInfo.restaurantHours;
-    document.getElementById("restaurant-hours-Mon").innerHTML = restaurantInfo.restaurantHours;
-    document.getElementById("restaurant-hours-Tues").innerHTML = restaurantInfo.restaurantHours;
-    document.getElementById("restaurant-hours-Wed").innerHTML = restaurantInfo.restaurantHours;
-    document.getElementById("restaurant-hours-Thurs").innerHTML = restaurantInfo.restaurantHours;
-    document.getElementById("restaurant-hours-Fri").innerHTML = restaurantInfo.restaurantHours;
-    document.getElementById("restaurant-hours-Sat").innerHTML = restaurantInfo.restaurantHours;
+    document.getElementById("restaurant-hours-Sun").innerHTML = restaurantHoursSun;
+    document.getElementById("restaurant-hours-Mon").innerHTML = restaurantHoursMon;
+    document.getElementById("restaurant-hours-Tues").innerHTML = restaurantHoursTues;
+    document.getElementById("restaurant-hours-Wed").innerHTML = restaurantHoursWed;
+    document.getElementById("restaurant-hours-Thurs").innerHTML = restaurantHoursThurs;
+    document.getElementById("restaurant-hours-Fri").innerHTML = restaurantHoursFri;
+    document.getElementById("restaurant-hours-Sat").innerHTML = restaurantHoursSat;
     
     $("#food-data").fadeIn("slow");
     // $(".information").slideUp("slow");
