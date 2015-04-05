@@ -36,6 +36,8 @@ var userAreaCode = 91733;
 // (and later, possibly use Google's Geolocation API)
 //
 (function() {
+    // Hide the yes information
+    $('#food-data').hide();
     
     // $('#area-code-modal').modal('show');
     document.getElementById("food-name-heading").innerHTML = foodTitle;
@@ -77,7 +79,9 @@ $("#button-yes").click(function() {
     document.getElementById("restaurant-phone").innerHTML = restaurantInfo.restaurantPhone;
     document.getElementById("restaurant-web").innerHTML = restaurantInfo.restaurantWeb;
     
-    $(".information").fadeIn("slow");
+    document.getElementById("restaurant-hours").innerHTML = restaurantInfo.restaurantHours;
+    
+    $("#food-data").fadeIn("slow");
     // $(".information").slideUp("slow");
 });
 

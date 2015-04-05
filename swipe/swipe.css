@@ -45,9 +45,8 @@ h1 {
     margin-bottom:5%;
 }
 
-.information {
-    display:none;
-    margin-bottom:5%;
+#food-data {
+    margin-bottom: 5%;
 }
 
 /*might not need this but leave it here for now*/
@@ -56,12 +55,8 @@ h1 {
 /*}*/
 
 #restaurant-info {
-    margin: 0px auto;
+    margin: 5% auto;
     width: 100%;
-}
-
-#restaurant-info p {
-    text-align: left;
 }
 
 /* Header and Footer Navbar Properties */
