@@ -1,3 +1,8 @@
+/***
+ *
+ * FoodByte Main CSS Stylesheet!
+ *
+ ***/
 body {
     font-family: 'Arvo', serif;
     background-color:#EBEBE0;
@@ -67,12 +72,20 @@ h1 {
     width: 100px;
 }
 
-#left {
-    height: 200px;
-    width: 200px;
+/* Header and Footer Navbar Properties */
+#header-navbar a {
+    text-decoration: none;
+    color: black;
 }
 
-#right {
-    height: 200px;
-    width: 200px;
+#footer-navbar a {
+    text-decoration: none;
+    color: black;
+}
+
+.navbar-nav {
+    margin: 0 auto;
+    display: table;
+    table-layout: fixed;
+    float: none;
 }
