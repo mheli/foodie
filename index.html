@@ -23,44 +23,57 @@
         <link href='http://fonts.googleapis.com/css?family=Lato&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
         
-        <script type="text/javascript" src="javascript.js"></script>
+        <!-- jQuery -->
+        <script src="jquery.js"></script>
+        <script> 
+            $(function(){
+              $("#navbar").load("includes/navbar.html"); 
+            });
+        </script> 
+        
     </head>
+    
+    <script type="text/javascript">
+        
+    </script>
     
     <!-- Body of HTML File -->
     <body>
     <!-- Start body -->
-        <div id="navbar-main" class="navbar navbar-default navbar-fixed-top">
-            <div class="container">
-                <div>
-                    <ul class="nav navbar-nav navbar-center">
-                        <li><a href="/">Home</a></li>
-                    </ul>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-center">
-                        <li><a href="/">Anything</a></li>
-                        <li><a href="/">Asian</a></li>
-                        <li><a href="/">Latin</a></li>
-                        <li><a href="/">American</a></li>
-                        <li><a href="/">About</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <!--<div id="navbar-main" class="navbar navbar-default navbar-fixed-top">-->
+        <!--    <div class="container">-->
+        <!--        <div>-->
+        <!--            <ul class="nav navbar-nav navbar-center">-->
+        <!--                <li><a href="/">Home</a></li>-->
+        <!--            </ul>-->
+        <!--        </div>-->
+        <!--        <div class="navbar-collapse collapse">-->
+        <!--            <ul class="nav navbar-nav navbar-center">-->
+        <!--                <li><a href="/">Anything</a></li>-->
+        <!--                <li><a href="/">Asian</a></li>-->
+        <!--                <li><a href="/">Latin</a></li>-->
+        <!--                <li><a href="/">American</a></li>-->
+        <!--                <li><a href="/">About</a></li>-->
+        <!--            </ul>-->
+        <!--        </div>-->
+        <!--    </div>-->
+        <!--</div>-->
+        
+        <div id="navbar"></div>
         
         <!-- Main Menu -->
-        <div class="container">
-            <h1>FoodByte</h1>
-            <h3>Pick an option below to let us help you decide what to eat.</h3>
-            <div class="primary-buttons">
-                <div class="btn-group-lg btn-group-vertical" role="group" aria-label="...">
-                  <button type="button" class="btn btn-default"><a href="">Anything</a></button>
-                  <button type="button" class="btn btn-default"><a href="./swipe/index.html">Asian</a></button>
-                  <button type="button" class="btn btn-default"><a href="">Latin</a></button>
-                  <button type="button" class="btn btn-default"><a href="">American</a></button>
-                </div>
-            </div>
-        </div>
+        <!--<div class="container">-->
+        <!--    <h1>FoodByte</h1>-->
+        <!--    <h3>Pick an option below to let us help you decide what to eat.</h3>-->
+        <!--    <div class="primary-buttons">-->
+        <!--        <div class="btn-group-lg btn-group-vertical" role="group" aria-label="...">-->
+        <!--          <button type="button" class="btn btn-default"><a href="">Anything</a></button>-->
+        <!--          <button type="button" class="btn btn-default"><a href="./swipe/index.html">Asian</a></button>-->
+        <!--          <button type="button" class="btn btn-default"><a href="">Latin</a></button>-->
+        <!--          <button type="button" class="btn btn-default"><a href="">American</a></button>-->
+        <!--        </div>-->
+        <!--    </div>-->
+        <!--</div>-->
         
     <!-- End body -->
     </body>

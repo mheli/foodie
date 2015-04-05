@@ -10,27 +10,41 @@ h1 {
     font-size: 40pt;
 }
 
-.center {
-    top: 60%;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    height:500px;
-    width:400px;
+.wrapper {
+    display:inline-block;
 }
 
-.float-left {
-    float:left;
-    width:300px;
+.item1 {
+    height: 200px;
+    width: 200px;
+    display:inline-block;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.item2 {
+    text-align: center;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 40pt;
+}
+
+.item3 {
+    height:200px;
+    width:200px;
+    display:inline-block;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 #food {
-    height: 500px;
-    width: 400px;
+    height: 570px;
+    width: 410px;
+    margin-top: 10%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 40px;
-    top: 60%;
+    
 }
 
 #accept {
