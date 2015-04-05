@@ -6,17 +6,15 @@
 
 body {
     font-family: 'Arvo', serif;
-    background-image: url('img/mainBackground.png');
+    background-image: url('img/mainBackgroundBlur.png');
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 h1 {
     text-align: center;
-    margin-top: 20%;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 60pt;
+    margin: 4% auto;
+    font-size: 84pt;
     color: #FFF;
 }
 
@@ -35,12 +33,7 @@ h3 {
 
 /* Main Button Properties */
 .primary-buttons {
-    top: 60%;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100px;
-    height: 100px;
+    text-align: center;
 }
 
 .primary-buttons a {
@@ -48,11 +41,11 @@ h3 {
     color: black;
 }
 
-/*.btn-group-lg {*/
-/*    width: 30%;*/
-/*    margin-left: auto;*/
-/*    margin-right: auto;*/
-/*}*/
+.btn-group-lg {
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%;
+}
 
 /* Swipe CSS */
 
