@@ -1,0 +1,49 @@
+body {
+    font-family: 'Arvo', serif;
+    background-image: url('img/mainBackground.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 60pt;
+    color: #FFF;
+}
+
+h3 {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+}
+
+.primary-buttons {
+    top: 60%;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    height: 100px;
+}
+
+.primary-buttons a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Swipe CSS */
+
+.image-file {
+    width: 400px;
+    height: 300px;
+}
+
+/* Navbar Properties */
+
+#navbar-main {
+    color: black;
+}
