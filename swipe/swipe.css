@@ -79,9 +79,9 @@ h1 {
 }
 
 #footer-navbar {
-    margin: 0px;
     margin-top: 50px;
-    height: 20px !important;
+    margin-bottom: 0px;
+    height: 20px;
 }
 
 .move-image-right {
