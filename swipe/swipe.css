@@ -37,21 +37,13 @@ h1 {
 
 .wrapper {
     margin: 0 auto;
-    width:800px;
+    width:700px;
     margin-top:5%;
     /*height:600px;*/
 }
 
 .information {
     display:none;
-}
-
-#left {
-    visibility: hidden;
-}
-
-#right {
-    visibility: hidden;
 }
 
 #food {
