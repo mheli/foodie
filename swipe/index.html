@@ -46,10 +46,12 @@
             </div>
         </div>
         
+        <!-- Food Item name -->
         <div class="name">
             <h1>Name of Food</h1>
         </div>
         
+        <!-- Image formatting -->
         <div class="outer">
             <div class="middle">
                 <div class="inner">
@@ -62,10 +64,17 @@
             </div>
         </div>
         
+        <!-- Food Data -->
+        <div class="information">
+            <p>Stuff will be here eventually.</p>
+        </div>
+        
+        <!-- if the user accepts, fade out both buttons. -->
         <script>
             $("#three").click(function() {
-                $("#one").fadeOut("slow");
+                $( "#one" ).fadeOut("slow");
                 $( this ).fadeOut("slow");
+                $( ".information" ).show();
             });
         </script>
         

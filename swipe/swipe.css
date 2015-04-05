@@ -63,6 +63,10 @@ h1 {
     margin-right:auto;
 }
 
+.information {
+    display:none;
+}
+
 #food {
     height: 570px;
     width: 410px;
