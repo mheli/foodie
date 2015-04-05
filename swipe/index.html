@@ -2,7 +2,7 @@
 <html>
     <!-- Head Information -->
     <head>
-        <title>FoodByte</title>
+        <title>FoodByte - Select a meal</title>
         
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,7 +25,6 @@
         
         <!-- Required jQuery for click calls -->
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-        
     </head>
     
     <!-- Body of HTML File -->
@@ -36,11 +35,7 @@
             <div class="container">
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-left">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/">Anything</a></li>
-                        <li><a href="/">Asian</a></li>
-                        <li><a href="/">Latin</a></li>
-                        <li><a href="/">American</a></li>
+                        <li><a id="user-area-code">Current Area Code - 00000</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="/">About</a></li>
@@ -50,9 +45,33 @@
             </div>
         </div>
         
+        <!-- Area Code Modal -->
+        <div class="modal fade" id="area-code-modal" tabindex="-1" role="dialog" aria-labelledby="area-code-modal-label">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="area-code-modal-label">What is your area code?</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div>Please enter your area code here - </div>
+                        <input type="text" name="area-code-input"/>
+                        <!--<div>-->
+                        <!--    - OR --->
+                        <!--</div>-->
+                        <!--<div>-->
+                        <!--    Find your location automatically-->
+                        <!--</div>-->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn">Done </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <!-- Food Item name -->
-        <div class="name">
-            <h1>Name of Food</h1>
+        <div id="food-name" class="name">
+            <h1 id="food-name-heading">Name of Food</h1>
         </div>
         
         <!-- Image formatting -->
@@ -63,16 +82,71 @@
         </div>
         
         <!-- Food Data -->
-        <div class="information">
-            <p>Stuff will be here eventually.</p>
+        <div class="container">
+            <div class="information">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="hi">
+                            <img id="approved-image" src="https://41.media.tumblr.com/f0420441ed24ce7f907b7d944fcdef1a/tumblr_nlf3v7hl2W1s9x5uco1_1280.jpg" width="400">
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="hi">
+                            <div id="restaurant-info">
+                                <p id="restaurant-name">Restaurant Name - </p>
+                                <p id="restaurant-address">Address - </p>
+                                <p id="restaurant-phone">Phone Number - </p>
+                                <p id="restaurant-web">Website - </p>
+                            </div>
+                            <table class="table table-striped">
+                                <thead>
+                                    <th>Days</th>
+                                    <th>Hours</th>
+                                </thead>
+                                
+                                <tbody>
+                                    <tr>
+                                        <td>Sunday</td>
+                                        <td>time</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Monday</td>
+                                        <td>time</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tuesday</td>
+                                        <td>time</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Wednesday</td>
+                                        <td>time</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Thursday</td>
+                                        <td>time</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Friday</td>
+                                        <td>time</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Saturday</td>
+                                        <td>time</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         
         <!-- Footer Information -->
         
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
         <script src="swipe.js"></script>
     </body>
 </html>

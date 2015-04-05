@@ -8,6 +8,24 @@ body {
     background-color:#EBEBE0;
 }
 
+/* Area Code Modal Properties */
+.modal-backdrop {
+    opacity: 0.89 !important;
+}
+
+.border-radius {
+    
+}
+
+/*.modal-open:not(.modal) {*/
+/*    -webkit-filter: blur(17px);*/
+/*    -moz-filter: blur(17px);*/
+/*    -o-filter: blur(17px);*/
+/*    -ms-filter: blur(17px);*/
+/*    filter: blur(17px);*/
+/*}*/
+
+/* Food Name Properties */
 .name {
     margin: 50px auto;
 }
@@ -18,50 +36,32 @@ h1 {
     color: black;
 }
 
-.outer {
-    display:inline;
-    top:0;
-}
-
-.middle {
-    display: inline;
-    top: 50%;
-    position: relative;
-}
-
-.inner {
-    display: inline;
-    top: -50%;
-    position: relative;
-}
-
+/* Food Swipe Menu */
 .swipe-menu {
     margin: 0 auto;
     width: 700px;
     margin-top: 5%;
     /*height:600px;*/
+    margin-bottom:5%;
 }
 
 .information {
     display:none;
+    margin-bottom:5%;
 }
 
-#food {
-    height: 570px;
-    width: 410px;
-    margin-top: 5%;
-    margin-left: auto;
-    margin-right: auto;
+/*might not need this but leave it here for now*/
+.hi {
+    text-align: center;
 }
 
-#accept {
-    height: 100px;
-    width: 100px;
+#restaurant-info {
+    margin: 10% auto;
+    width: 85%;
 }
 
-#reject {
-    height: 100px;
-    width: 100px;
+#restaurant-info p {
+    text-align: left;
 }
 
 /* Header and Footer Navbar Properties */
@@ -73,6 +73,11 @@ h1 {
 #footer-navbar a {
     text-decoration: none;
     color: black;
+}
+
+.move-image-right {
+    text-align:right;
+    float:right;
 }
 
 .navbar-nav {
