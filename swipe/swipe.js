@@ -128,12 +128,14 @@ function getRandomImgUrl() {
                   place_id_2_place[results[i].place_id] = results[i];
                   createMarker(results[i]);
                 }
-                var index = Math.floor((Math.random() * place_id_2_place.length));
+                var index = Math.floor((Math.random() * results.length));
                 var count = 0;
                 var pic_key;
                 for (var key in place_id_2_place) {
-                    if (count >= index)
+                    if (count >= index){
                         pic_key = key;
+                        break;
+                    }
                     else
                         count += 1;
                 }
@@ -144,7 +146,6 @@ function getRandomImgUrl() {
                    
                   service.getDetails(request, function(place, status) {
                     if (status == google.maps.places.PlacesServiceStatus.OK) {
-    
                         var index = Math.floor((Math.random() * place.photos.length));
 
                         var imgUrl = (place.photos[index]).getUrl({'maxWidth' : 400});
@@ -156,9 +157,6 @@ function getRandomImgUrl() {
                         restaurantInfo.restaurantAddress = place.formatted_address;
                         restaurantInfo.restaurantPhone = place.international_phone_number;
                         restaurantInfo.restaurantWeb = place.website;
-                        alert("about to parse");
-                        var sch = String.split(place.opening_hours.weekday_text, ",");
-                        alert(sch);
                         restaurantInfo.restaurantHoursSun = sch[0];
                         restaurantInfo.restaurantHoursMon = sch[1];
                         restaurantInfo.restaurantHoursTues = sch[2];
