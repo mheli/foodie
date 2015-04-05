@@ -10,6 +10,9 @@
 ////////////////////////////////////////////////////////////////
 
 var userAreaCode = 91733;
+var latitude = 0;
+var longitude = 0;
+
 var foodTitle = "Pho (Vietnamese Beef Noodle Soup)";
 
 var restaurantName = "Pho (Vietnamese Beef Noodle Soup)";
@@ -34,59 +37,117 @@ var restaurantInfo = {
 //
 ////////////////////////////////////////////////////////////////
 
-// function areaCodeToLatLng (request, response) {
-//   geocoder.geocode({ 'address': request.term, 'latLng': centLatLng, 'region': 'US' }, function (results, status) {
-//     response($.map(results, function (item) {
-//       return {
-//       item.address_components.postal_code;//This is what you want to look at
-//       }
-// }
-
-function getRandomImgUrl(){
-  var map;
-  var infowindow;
-
-  function initialize() {
-    var pyrmont = new google.maps.LatLng(-33.8665433, 151.1956316);
-  
-    map = new google.maps.Map(document.getElementById('map-canvas'), {
-      center: pyrmont,
-      zoom: 15
-    });
-  
-    var request = {
-      location: pyrmont,
-      radius: 500,
-      types: ['store']
-    };
-    infowindow = new google.maps.InfoWindow();
-    var service = new google.maps.places.PlacesService(map);
-    service.nearbySearch(request, callback);
-  }
-  
-  function callback(results, status) {
-    if (status == google.maps.places.PlacesServiceStatus.OK) {
-      for (var i = 0; i < results.length; i++) {
-        createMarker(results[i]);
-      }
-    }
-  }
-  
-  function createMarker(place) {
-    var placeLoc = place.geometry.location;
-    var marker = new google.maps.Marker({
-      map: map,
-      position: place.geometry.location
-    });
-  
-    google.maps.event.addListener(marker, 'click', function() {
-      infowindow.setContent(place.name);
-      infowindow.open(map, this);
-    });
-  }
-  
-  google.maps.event.addDomListener(window, 'load', initialize);
+//
+// Convert the area code to latitude and longitude
+//
+function areaCodeToLatLng() {
+    var geocoder = new google.maps.Geocoder();
+    geocoder.geocode( { 'address': userAreaCode.toString() },
+        function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                latitude = results[0].geometry.location.lat();
+                longitude = results[0].geometry.location.lng();
+            } else {
+              alert('Geocode was not successful because WE GONNA CELEBRATE ONE MORE TIME');
+            }
+        }
+    );
 }
+
+//
+// Gets a random image URL... Custom random number generator anyone?
+//
+function getRandomImgUrl() {
+    var map;
+    var infowindow;
+    var place_id_2_place = [];
+    var place_photos_2_id = [];
+
+        function initialize() {
+          var pyrmont = new google.maps.LatLng(-33.8665433, 151.1956316);
+        
+          map = new google.maps.Map(document.getElementById('map-canvas'), {
+            center: pyrmont,
+            zoom: 15
+          });
+        
+          var request = {
+            location: pyrmont,
+            radius: 32187,
+            types: ['restaurant']
+          };
+          alert("begin");
+          infowindow = new google.maps.InfoWindow();
+          var service = new google.maps.places.PlacesService(map);
+          service.nearbySearch(request, function(results, status) {
+              if (status == google.maps.places.PlacesServiceStatus.OK) {
+                for (var i = 0; i < results.length; i++) {
+                  place_id_2_place[results[i].place_id] = results[i];
+                  alert(results[i].place_id);
+                  createMarker(results[i]);
+                }
+                alert("!!!");
+                // place_id_2_place is populated
+                for (var key in place_id_2_place)
+                {
+                  
+                  alert(key);
+                }
+                var index = Math.floor((Math.random() * place_id_2_place.length()));
+                var count = 0;
+                alert(index);
+
+                 for (var key in place_id_2_place) {
+                   if (count >= index){
+                    var request = {
+                      placeId: key
+                    };
+                   
+                  service.getDetails(request, function(place, status) {
+                    if (status == google.maps.places.PlacesServiceStatus.OK) {
+    
+                        var index = Math.floor((Math.random() * place.photos.length()));
+                        alert(index);
+                        
+                       var imgUrl = (place.photos[index]).getUrl({'maxWidth' : 1000});
+                       alert(imgUrl);
+                       return;
+                        
+                        var marker = new google.maps.Marker({
+                        map: map,
+                        position: place.geometry.location
+                      });
+                      google.maps.event.addListener(marker, 'click', function() {
+                        infowindow.setContent(place.name);
+                        infowindow.open(map, this);
+                      });
+                    }
+                  });
+                 
+                   }
+                   else
+                    count += 1;
+                 }
+              }
+            });
+        }
+        
+        function createMarker(place) {
+          var placeLoc = place.geometry.location;
+          var marker = new google.maps.Marker({
+            map: map,
+            position: place.geometry.location
+          });
+        
+          google.maps.event.addListener(marker, 'click', function() {
+            infowindow.setContent(place.name);
+            infowindow.open(map, this);
+          });
+        }
+        
+        initialize();
+       //google.maps.event.addDomListener(window, 'load', initialize);
+};
 
 //
 // IIFE that prompts the user to input a ZIP code to search for nearby areas
@@ -107,6 +168,26 @@ function getRandomImgUrl(){
 // User Input Functions
 // 
 ////////////////////////////////////////////////////////////////
+
+
+//
+// jQuery function that reads the user's input on the modal to update the 
+// geographic coordinates
+//
+$('#modal-button').click(function() {
+    var value = $('input').val();
+    if (value.length != 5 || (isNaN == true)) {
+        alert("Please enter a valid postal code.");
+    }
+    else {
+        userAreaCode = value;
+        document.getElementById("user-area-code").innerHTML = "Your area code - " + userAreaCode.toString();
+    
+    
+        $('#area-code-modal').modal('hide');
+        areaCodeToLatLng();
+    }
+});
 
 //
 // jQuery function that reads clicks on the "Yes" or "No" buttons and acts

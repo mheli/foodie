@@ -25,6 +25,7 @@
         
         <!-- Required jQuery for click calls -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        
     </head>
     
     <!-- Body of HTML File -->
@@ -63,15 +64,17 @@
                         <!--</div>-->
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn">Done </button>
+                        <button type="button" id="modal-button" class="btn">Done </button>
                     </div>
                 </div>
             </div>
         </div>
         
+        
         <!-- Food Item name -->
         <div id="food-name" class="name">
             <h1 id="food-name-heading">Name of Food</h1>
+            <!--<h2 id="zipcode">Zipcode</h2>-->
         </div>
         
         <!-- Image formatting -->
@@ -162,9 +165,11 @@
 
         <!-- Footer Information -->
         
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <!-- Include some scripts -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;signed_in=true&amp;libraries=places"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;signed_in=true"></script>
         <script src="swipe.js"></script>
     </body>
 </html>
