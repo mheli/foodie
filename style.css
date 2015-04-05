@@ -27,9 +27,16 @@ h3 {
 
 
 /* Navbar Properties */
-#navbar-main a {
+#header a {
     text-decoration: none;
     color: black;
+}
+
+.navbar-nav {
+    margin: 0 auto;
+    display: table;
+    table-layout: fixed;
+    float: none;
 }
 
 /* Main Button Properties */
