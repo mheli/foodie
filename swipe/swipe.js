@@ -240,7 +240,6 @@ $('#modal-button-geolocation').click(function() {
 //
 $("#button-no").click(function() {
     getRandomImgUrl();
-    //$("#image-food").attr("src", "https://40.media.tumblr.com/5f0a1d478eb300af666f79f728d6d9f6/tumblr_nmajux73XD1rq6lflo1_1280.jpg");
 });
 
 
@@ -253,10 +252,6 @@ $("#button-yes").click(function() {
     $(this).fadeOut("slow");
     $("#image-food").fadeOut("slow");
     $(".disappear").fadeOut("slow");
-    
-    //$("#image-food").animate({
-    //    'marginLeft' : "-=300px"
-    //});
     
     // Change restaurant data if accept
     // document.getElementById("restaurant-name").innerHTML = "Restaurant Name - " + restaurantInfo.restaurantName;
@@ -279,13 +274,12 @@ $("#button-yes").click(function() {
     document.getElementById("restaurant-hours-Sat").innerHTML = restaurantInfo.restaurantHoursSat;
     
     $("#food-data").fadeIn("slow");
-    // $(".information").slideUp("slow");
 });
 
 $(".close").click(function() {
-    $("#food-data").fadeOut("slow");
-    $("#button-no").fadeIn("slow");
-    $("#button-yes").fadeIn("slow");
-    $("#image-food").fadeIn("slow");
-    $(".disappear").fadeIn("slow");
+    $("#food-data").fadeOut("fast");
+    $("#button-no").fadeIn("fast");
+    $("#button-yes").fadeIn("fast");
+    $("#image-food").fadeIn("fast");
+    $(".disappear").fadeIn("fast");
 });

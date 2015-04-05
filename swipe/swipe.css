@@ -78,6 +78,8 @@ h1 {
 }
 
 #footer-navbar {
+    margin: 0px;
+    margin-top: 50px;
     height: 20px !important;
 }
 
