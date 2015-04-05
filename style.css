@@ -26,8 +26,13 @@ h3 {
 }
 
 
-/* Navbar Properties */
-#header a {
+/* Header and Footer Navbar Properties */
+#header-navbar a {
+    text-decoration: none;
+    color: black;
+}
+
+#footer-navbar a {
     text-decoration: none;
     color: black;
 }
