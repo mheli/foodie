@@ -55,6 +55,25 @@ function areaCodeToLatLng() {
 }
 
 //
+// Find the geolocation of the user
+//
+function findGeolocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            function (position) {
+                latitude = position.coords.latitude;
+                longitude = position.coords.longitude;
+                alert("GEOLOCATION WORKS");
+            }
+        );
+    } else { // Browser doesn't support Geolocation
+        alert("Your browser doesn't support geolocation. We've placed you in Siberia.");
+        latitude = 60;
+        longitude = 105;
+    }
+}
+
+//
 // Gets a random image URL... Custom random number generator anyone?
 //
 function getRandomImgUrl() {
@@ -73,27 +92,19 @@ function getRandomImgUrl() {
         
           var request = {
             location: pyrmont,
-            radius: 32187,
+            radius: 500,
             types: ['restaurant']
           };
-          alert("begin");
+          alert("begin11");
           infowindow = new google.maps.InfoWindow();
           var service = new google.maps.places.PlacesService(map);
           service.nearbySearch(request, function(results, status) {
               if (status == google.maps.places.PlacesServiceStatus.OK) {
                 for (var i = 0; i < results.length; i++) {
                   place_id_2_place[results[i].place_id] = results[i];
-                  alert(results[i].place_id);
                   createMarker(results[i]);
                 }
-                alert("!!!");
-                // place_id_2_place is populated
-                for (var key in place_id_2_place)
-                {
-                  
-                  alert(key);
-                }
-                var index = Math.floor((Math.random() * place_id_2_place.length()));
+                var index = Math.floor((Math.random() * place_id_2_place.length));
                 var count = 0;
                 alert(index);
 
@@ -106,13 +117,10 @@ function getRandomImgUrl() {
                   service.getDetails(request, function(place, status) {
                     if (status == google.maps.places.PlacesServiceStatus.OK) {
     
-                        var index = Math.floor((Math.random() * place.photos.length()));
-                        alert(index);
-                        
+                        var index = Math.floor((Math.random() * place.photos.length));
+
                        var imgUrl = (place.photos[index]).getUrl({'maxWidth' : 1000});
-                       alert(imgUrl);
-                       return;
-                        
+
                         var marker = new google.maps.Marker({
                         map: map,
                         position: place.geometry.location
@@ -169,7 +177,6 @@ function getRandomImgUrl() {
 // 
 ////////////////////////////////////////////////////////////////
 
-
 //
 // jQuery function that reads the user's input on the modal to update the 
 // geographic coordinates
@@ -183,10 +190,16 @@ $('#modal-button').click(function() {
         userAreaCode = value;
         document.getElementById("user-area-code").innerHTML = "Your area code - " + userAreaCode.toString();
     
-    
         $('#area-code-modal').modal('hide');
         areaCodeToLatLng();
     }
+});
+
+//
+// jQuery function that finds the user's location using Geolocation.
+//
+$('#modal-button-geolocation').click(function() {
+    findGeolocation();
 });
 
 //
