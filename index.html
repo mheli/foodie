@@ -24,13 +24,7 @@
         <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
         
         <!-- jQuery -->
-        <!--<script src="jquery.js"></script>-->
-        <!--<script> -->
-        <!--    $(function(){-->
-        <!--      $("#navbar").load("includes/navbar.html"); -->
-        <!--    });-->
-        <!--</script> -->
-        
+        <script src="jquery.js"></script>
     </head>
     
     <script type="text/javascript">
@@ -40,27 +34,30 @@
     <!-- Body of HTML File -->
     <body>
     <!-- Start body -->
-        <!--<div id="navbar-main" class="navbar navbar-default navbar-fixed-top">-->
-        <!--    <div class="container">-->
-        <!--        <div>-->
-        <!--            <ul class="nav navbar-nav navbar-center">-->
-        <!--                <li><a href="/">Home</a></li>-->
-        <!--            </ul>-->
-        <!--        </div>-->
-        <!--        <div class="navbar-collapse collapse">-->
-        <!--            <ul class="nav navbar-nav navbar-center">-->
-        <!--                <li><a href="/">Anything</a></li>-->
-        <!--                <li><a href="/">Asian</a></li>-->
-        <!--                <li><a href="/">Latin</a></li>-->
-        <!--                <li><a href="/">American</a></li>-->
-        <!--                <li><a href="/">About</a></li>-->
-        <!--            </ul>-->
-        <!--        </div>-->
-        <!--    </div>-->
-        <!--</div>-->
+        <div id="navbar-main" class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div>
+                    <ul class="nav navbar-nav navbar-center">
+                        <li><a href="/">Home</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-center">
+                        <li><a href="/">Anything</a></li>
+                        <li><a href="/">Asian</a></li>
+                        <li><a href="/">Latin</a></li>
+                        <li><a href="/">American</a></li>
+                        <li><a href="/">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
         
         <!--<div id="navbar"></div>-->
-        <object type="text/html" data="includes/navbar.html" ></object>
+        <script> 
+            $.load("includes/navbar.html");
+        </script> 
+        
         <!-- Main Menu -->
         <div class="container">
             <h1>FoodByte</h1>
