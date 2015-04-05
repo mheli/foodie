@@ -14,10 +14,10 @@ var latitude = 0;
 var longitude = 0;
 
 var foodName = [
-    "So what do you think of this dish?",
+    "So what do you think of this?",
     "How about you check this out!",
-    "This dish looks real hot!",
-    ""
+    "This looks real hot!",
+    "lol"
 ];
 
 var restaurantName = "Pho Filet";
@@ -147,7 +147,9 @@ function getRandomImgUrl() {
                   service.getDetails(request, function(place, status) {
                     if (status == google.maps.places.PlacesServiceStatus.OK) {
                         var index = Math.floor((Math.random() * place.photos.length));
-
+                        while (place.photos[index].width < 400 && index < place.photos.length)
+                            index += 1;
+                        
                         var imgUrl = (place.photos[index]).getUrl({'maxWidth' : 400});
                         document.getElementById("yes-image").innerHTML = "<img id='image-food' src='"+imgUrl+"'>";
                         //'<img id="button-no" style="float: center; margin: 0px 20px 15px 15px;" src="https://pressimus.com/css/images/remove-big.png" width="100" /><img id="image-food" style="float: center; margin: 0px 20px 15px 15px;" src="' + imgUrl + '" width="400" /> <img id="button-yes" style="float: center; margin: 0px 0px 15px 15px;" src="http://www.clipartbest.com/cliparts/yTo/pp6/yTopp6GTE.gif" width="100" />';
@@ -157,6 +159,8 @@ function getRandomImgUrl() {
                         restaurantInfo.restaurantAddress = place.formatted_address;
                         restaurantInfo.restaurantPhone = place.international_phone_number;
                         restaurantInfo.restaurantWeb = place.website;
+                        var unknown = place.opening_hours.weekday_text;
+                        var sch = Object.keys(unknown).map(function(k) { return unknown[k] });
                         restaurantInfo.restaurantHoursSun = sch[0];
                         restaurantInfo.restaurantHoursMon = sch[1];
                         restaurantInfo.restaurantHoursTues = sch[2];
@@ -228,8 +232,7 @@ $('#modal-button').click(function() {
     var value = $('input').val();
     if (value.length != 5 || (isNaN == true)) {
         alert("Please enter a valid postal code.");
-    }
-    else {
+    } else {
         userAreaCode = value;
         document.getElementById("user-area-code").innerHTML = "Your area code - " + userAreaCode.toString();
     
@@ -281,13 +284,13 @@ $("#button-yes").click(function() {
     document.getElementById("restaurant-web").innerHTML = restaurantInfo.restaurantWeb;
     
     // Hours of Operation Table
-    document.getElementById("restaurant-hours-Sun").innerHTML = restaurantHoursSun;
-    document.getElementById("restaurant-hours-Mon").innerHTML = restaurantHoursMon;
-    document.getElementById("restaurant-hours-Tues").innerHTML = restaurantHoursTues;
-    document.getElementById("restaurant-hours-Wed").innerHTML = restaurantHoursWed;
-    document.getElementById("restaurant-hours-Thurs").innerHTML = restaurantHoursThurs;
-    document.getElementById("restaurant-hours-Fri").innerHTML = restaurantHoursFri;
-    document.getElementById("restaurant-hours-Sat").innerHTML = restaurantHoursSat;
+    document.getElementById("restaurant-hours-Sun").innerHTML = restaurantInfo.restaurantHoursSun;
+    document.getElementById("restaurant-hours-Mon").innerHTML = restaurantInfo.restaurantHoursMon;
+    document.getElementById("restaurant-hours-Tues").innerHTML = restaurantInfo.restaurantHoursTues;
+    document.getElementById("restaurant-hours-Wed").innerHTML = restaurantInfo.restaurantHoursWed;
+    document.getElementById("restaurant-hours-Thurs").innerHTML = restaurantInfo.restaurantHoursThurs;
+    document.getElementById("restaurant-hours-Fri").innerHTML = restaurantInfo.restaurantHoursFri;
+    document.getElementById("restaurant-hours-Sat").innerHTML = restaurantInfo.restaurantHoursSat;
     
     $("#food-data").fadeIn("slow");
     // $(".information").slideUp("slow");

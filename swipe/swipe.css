@@ -54,6 +54,11 @@ h1 {
     width: 100%;
 }
 
+.vertical-center .img-responsive {
+    display: inline-block;
+    vertical-align: middle;
+}
+
 /* Header and Footer Navbar Properties */
 #header-navbar a {
     text-decoration: none;
@@ -75,4 +80,8 @@ h1 {
     display: table;
     table-layout: fixed;
     float: none;
+}
+
+.footer {
+    padding-top:60px;
 }
