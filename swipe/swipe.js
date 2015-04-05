@@ -25,13 +25,13 @@ var restaurantInfo = {
     restaurantAddress: "4242 San Gabriel Avenue, San Gabriel, California 42424",
     restaurantPhone: "(424) 242-4242",
     restaurantWeb: "N/A",
-    restaurantHoursSun: "6 AM - 9 PM",
-    restaurantHoursMon: "6 AM - 9 PM",
-    restaurantHoursTues: "6 AM - 9 PM",
-    restaurantHoursWed: "6 AM - 9 PM",
-    restaurantHoursThurs: "6 AM - 9 PM",
-    restaurantHoursFri: "6 AM - 9 PM",
-    restaurantHoursSat: "6 AM - 9 PM",
+    restaurantHoursSun: "6:00 AM - 9:00 PM",
+    restaurantHoursMon: "6:00 AM - 9:00 PM",
+    restaurantHoursTues: "6:00 AM - 9:00 PM",
+    restaurantHoursWed: "6:00 AM - 9:00 PM",
+    restaurantHoursThurs: "6:00 AM - 9:00 PM",
+    restaurantHoursFri: "6:00 AM - 9:00 PM",
+    restaurantHoursSat: "6:00 AM - 9:00 PM",
     restaurantPrice: "$6 - $9"
 }
 
@@ -282,3 +282,10 @@ $("#button-yes").click(function() {
     // $(".information").slideUp("slow");
 });
 
+$(".close").click(function() {
+    $("#food-data").fadeOut("slow");
+    $("#button-no").fadeIn("slow");
+    $("#button-yes").fadeIn("slow");
+    $("#image-food").fadeIn("slow");
+    $(".disappear").fadeIn("slow");
+});

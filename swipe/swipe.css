@@ -58,7 +58,7 @@ h1 {
 .vertical-center {
     float: none;
     vertical-align: middle;
-    display: inline-block;
+    display: inline-block !important;
 }
 
 /* Header and Footer Navbar Properties */
