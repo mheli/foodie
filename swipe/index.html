@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <!-- Head Information -->
+    <head>
+        <title>FoodByte - Select a meal</title>
+        
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap -->
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+        <link href="swipe.css" rel="stylesheet">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        
+        <!-- Font -->
+        <link href='http://fonts.googleapis.com/css?family=Lato&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+        
+        <!-- Required jQuery for click calls -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        
+    </head>
+    
+    <!-- Body of HTML File -->
+    <body>
+        
+        <!-- Header -->
+        
+        <div id="header-navbar" class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li><a id="user-area-code">Current Zip Code - 00000</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="/">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Area Code Modal -->
+        <div class="modal fade" id="area-code-modal" tabindex="-1" role="dialog" aria-labelledby="area-code-modal-label">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="area-code-modal-label">What is your zip code?</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div>Please enter your zip code here.</div>
+                        <input style="margin-top:5px;margin-bottom:5px;" type="text" name="area-code-input"/>
+                        <div><br>-- OR --<br></div>
+                        <div>Find your location automatically.</div>
+                        <button style="margin-top:5px;margin-bottom:5px;" type="button" id="modal-button-geolocation" class="btn">Find Location</button>
+                    </div>
+                    <div class="modal-footer">
+                        <center>
+                            <button type="button" id="modal-button" class="btn">Done</button>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Food Item name -->
+        <div id="food-name" class="name">
+            <h1 id="food-name-heading">So how does this dish look?</h1>
+        </div>
+        
+        <!-- Image formatting -->
+        <!--<div class="swipe-menu" >-->
+        <!--    <img id="button-no" style="float: center; margin: 0px 20px 15px 15px;" src="https://pressimus.com/css/images/remove-big.png" width="100" />-->
+        <!--    <img id="image-food" style="float: center; margin: 0px 20px 15px 15px;" src="https://41.media.tumblr.com/f0420441ed24ce7f907b7d944fcdef1a/tumblr_nlf3v7hl2W1s9x5uco1_1280.jpg" width="400" />-->
+        <!--    <img id="button-yes" style="float: center; margin: 0px 0px 15px 15px;" src="http://www.clipartbest.com/cliparts/yTo/pp6/yTopp6GTE.gif" width="100" />-->
+        <!--</div>-->
+        <div class="row" style="width:100%; margin: 50px auto;">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <img id="button-no" class="img-responsive center-block" src="https://pressimus.com/css/images/remove-big.png" style="width:50%;" />
+            </div>
+            <div id="yes-image" class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <img id="image-food" class="img-responsive center-block" src="https://41.media.tumblr.com/f0420441ed24ce7f907b7d944fcdef1a/tumblr_nlf3v7hl2W1s9x5uco1_1280.jpg" style="width:100%;" />
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <img id="button-yes" class="img-responsive center-block" src="http://www.clipartbest.com/cliparts/yTo/pp6/yTopp6GTE.gif" style="width:50%;" />
+            </div>
+        </div>
+
+        
+        <!-- Food Data -->
+        <div class="container">
+            <div id="food-data" class="row">
+                <div id="wanted-image" class="col-md-6">
+                    <img id="approved-image" class="img-responsive center-block" src="https://41.media.tumblr.com/f0420441ed24ce7f907b7d944fcdef1a/tumblr_nlf3v7hl2W1s9x5uco1_1280.jpg" width="400">
+                </div>
+                
+                <div class="col-md-6">
+                    <table id="restaurant-info" class="table">
+                        <tbody>
+                            <tr>
+                                <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            </tr>
+                            <tr>
+                                <td>Restaurant Name</td>
+                                <td id="restaurant-name"></td>
+                            </tr>
+                            <tr>
+                                <td>Address</td>
+                                <td id="restaurant-address"></td>
+                            </tr>
+                            <tr>
+                                <td>Phone Number</td>
+                                <td id="restaurant-phone"></td>
+                            </tr>
+                            <tr>
+                                <td>Website</td>
+                                <td id="restaurant-web"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-striped">
+                        <thead>
+                                <th>Hours of Operation</th>
+                        </thead>
+                        
+                        <tbody>
+                            <tr>
+                                <td id="restaurant-hours-Sun">restaurantHoursSun</td>
+                            </tr>
+                            <tr>
+                                <td id="restaurant-hours-Mon">restaurantHoursMon</td>
+                            </tr>
+                            <tr>
+                                <td id="restaurant-hours-Tues">restaurantHoursTues</td>
+                            </tr>
+                            <tr>
+                                <td id="restaurant-hours-Wed">restaurantHoursWed</td>
+                            </tr>
+                            <tr>
+                                <td id="restaurant-hours-Thurs">restaurantHoursThurs</td>
+                            </tr>
+                            <tr>
+                                <td id="restaurant-hours-Fri">restaurantHoursFri</td>
+                            </tr>
+                            <tr>
+                                <td id="restaurant-hours-Sat">restaurantHoursSat</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <div id="map-canvas" style="display: none"></div>
+
+        <!-- Footer Information -->
+        
+        <div id="footer-navbar" class="navbar navbar-default navbar-fixed-bottom">
+            <div class="container">
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li><a href="http://www.google.com"><img src="../logo/color.png"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <!-- Include some scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;signed_in=true&amp;libraries=places"></script>
+        <script src="swipe.js"></script>
+        
+    </body>
+</html>

@@ -1,0 +1,70 @@
+/***
+ *
+ * FoodByte Main CSS Stylesheet!
+ *
+ ***/
+ 
+body {
+    font-family: 'Arvo', serif;
+    background-image: url('img/mainBackgroundBlur.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    text-align: center;
+    margin: 5% auto;
+    font-size: 84pt;
+    color: #FFF;
+    text-shadow: 1px 1px 2px black; 
+}
+
+h3 {
+    text-align: center;
+    margin: 5% auto;
+    color: white;
+    text-shadow: 1px 1px 2px black; 
+}
+
+
+/* Header and Footer Navbar Properties */
+#header-navbar a {
+    text-decoration: none;
+    color: black;
+}
+
+#footer-navbar a {
+    text-decoration: none;
+    color: black;
+}
+
+.navbar-nav {
+    margin: 0 auto;
+    display: table;
+    table-layout: fixed;
+    float: none;
+}
+
+/* Main Button Properties */
+.primary-buttons {
+    text-align: center;
+}
+
+.primary-buttons a {
+    text-decoration: none;
+    color: black;
+}
+
+.btn-group-lg {
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%;
+    height:20%;
+}
+
+/* Swipe CSS */
+
+.image-file {
+    width: 400px;
+    height: 300px;
+}
